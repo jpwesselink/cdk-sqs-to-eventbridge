@@ -7,6 +7,9 @@
   "scripts": {
     "build": "npx projen build",
     "bump": "npx projen bump",
+    "bundle": "npx projen bundle",
+    "bundle:sqsToEventbridge.lambda": "npx projen bundle:sqsToEventbridge.lambda",
+    "bundle:sqsToEventbridge.lambda:watch": "npx projen bundle:sqsToEventbridge.lambda:watch",
     "clobber": "npx projen clobber",
     "compat": "npx projen compat",
     "compile": "npx projen compile",
@@ -40,6 +43,7 @@
     "@typescript-eslint/parser": "^5",
     "aws-cdk-lib": "^2.88.0",
     "constructs": "^10.2.69",
+    "esbuild": "^0.18.17",
     "eslint": "^8",
     "eslint-import-resolver-node": "^0.3.7",
     "eslint-import-resolver-typescript": "^3.5.5",

@@ -14,6 +14,9 @@ const project = new awscdk.AwsCdkConstructLibrary({
   // description: undefined,  /* The description is just a string that helps people understand the purpose of the package. */
   // devDeps: [],             /* Build dependencies for this module. */
   // packageName: undefined,  /* The "name" in package.json. */
-
+  lambdaOptions: {
+    // target node.js runtime
+    runtime: awscdk.LambdaRuntime.NODEJS_18_X,
+  },
 });
 project.synth();

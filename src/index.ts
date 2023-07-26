@@ -5,6 +5,7 @@ import { NodejsFunction } from 'aws-cdk-lib/aws-lambda-nodejs';
 import { Queue } from 'aws-cdk-lib/aws-sqs';
 import { paramCase } from 'change-case';
 import { Construct } from 'constructs';
+import { SqsToEventbridgeFunction } from './sqsToEventbridge-function';
 
 export interface EventbridgeToSqsProps {
   readonly eventBus: EventBus;
@@ -20,15 +21,11 @@ export class SqsToEventbridge extends Construct {
 
     const idName = paramCase(id);
     // sqs to lambda which forwards events to the private event backbone bus
-    const sqsToEventBridgeLambda = new NodejsFunction(
+    const sqsToEventBridgeLambda = new SqsToEventbridgeFunction(
       this,
       'sqsToEventbridgeLambda',
       {
         functionName: `${idName}-sqs-to-event-bridge-lambda`,
-        runtime: Runtime.NODEJS_18_X,
-        entry:
-          'src/lambdas/sqsToEventbridgeLambda.ts',
-        handler: 'handler',
         logRetention,
       },
     );
