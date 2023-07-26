@@ -1,6 +1,23 @@
 # cdk-sqs-to-eventbridge
 
 This is a CDK construct library that allows you to easily put messages from an SQS queue to an EventBridge event bus
+
+## Installation
+
+```bash
+npm i cdk-sqs-to-eventbridge
+```
+
+## Usage
+
+```typescript
+import { SqsToEventbridge } from 'cdk-sqs-to-eventbridge'
+
+new SqsToEventbridge(this, 'SqsToEventbridge', {
+  eventBus: eventBus,
+  queue: queue,
+})
+```
 # API Reference <a name="API Reference" id="api-reference"></a>
 
 ## Constructs <a name="Constructs" id="Constructs"></a>
@@ -147,7 +164,9 @@ const eventbridgeToSqsProps: EventbridgeToSqsProps = { ... }
 | --- | --- | --- |
 | <code><a href="#cdk-sqs-to-eventbridge.EventbridgeToSqsProps.property.eventBus">eventBus</a></code> | <code>aws-cdk-lib.aws_events.EventBus</code> | *No description.* |
 | <code><a href="#cdk-sqs-to-eventbridge.EventbridgeToSqsProps.property.sqsQueue">sqsQueue</a></code> | <code>aws-cdk-lib.aws_sqs.Queue</code> | *No description.* |
+| <code><a href="#cdk-sqs-to-eventbridge.EventbridgeToSqsProps.property.functionOptions">functionOptions</a></code> | <code>aws-cdk-lib.aws_lambda.FunctionOptions</code> | *No description.* |
 | <code><a href="#cdk-sqs-to-eventbridge.EventbridgeToSqsProps.property.logRetention">logRetention</a></code> | <code>number</code> | *No description.* |
+| <code><a href="#cdk-sqs-to-eventbridge.EventbridgeToSqsProps.property.sqsEventSourceProps">sqsEventSourceProps</a></code> | <code>aws-cdk-lib.aws_lambda_event_sources.SqsEventSourceProps</code> | *No description.* |
 
 ---
 
@@ -171,6 +190,16 @@ public readonly sqsQueue: Queue;
 
 ---
 
+##### `functionOptions`<sup>Optional</sup> <a name="functionOptions" id="cdk-sqs-to-eventbridge.EventbridgeToSqsProps.property.functionOptions"></a>
+
+```typescript
+public readonly functionOptions: FunctionOptions;
+```
+
+- *Type:* aws-cdk-lib.aws_lambda.FunctionOptions
+
+---
+
 ##### `logRetention`<sup>Optional</sup> <a name="logRetention" id="cdk-sqs-to-eventbridge.EventbridgeToSqsProps.property.logRetention"></a>
 
 ```typescript
@@ -178,6 +207,16 @@ public readonly logRetention: number;
 ```
 
 - *Type:* number
+
+---
+
+##### `sqsEventSourceProps`<sup>Optional</sup> <a name="sqsEventSourceProps" id="cdk-sqs-to-eventbridge.EventbridgeToSqsProps.property.sqsEventSourceProps"></a>
+
+```typescript
+public readonly sqsEventSourceProps: SqsEventSourceProps;
+```
+
+- *Type:* aws-cdk-lib.aws_lambda_event_sources.SqsEventSourceProps
 
 ---
 
