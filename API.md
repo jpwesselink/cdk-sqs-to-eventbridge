@@ -13,11 +13,15 @@ npm i cdk-sqs-to-eventbridge
 ```typescript
 import { SqsToEventbridge } from 'cdk-sqs-to-eventbridge'
 
+declare const eventBus: EventBus;
+declare const queue: Queue;
+
 new SqsToEventbridge(this, 'SqsToEventbridge', {
   eventBus: eventBus,
   queue: queue,
-})
+});
 ```
+
 # API Reference <a name="API Reference" id="api-reference"></a>
 
 ## Constructs <a name="Constructs" id="Constructs"></a>
@@ -119,6 +123,8 @@ Any object.
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
 | <code><a href="#cdk-sqs-to-eventbridge.SqsToEventbridge.property.node">node</a></code> | <code>constructs.Node</code> | The tree node. |
+| <code><a href="#cdk-sqs-to-eventbridge.SqsToEventbridge.property.eventBus">eventBus</a></code> | <code>aws-cdk-lib.aws_events.IEventBus</code> | *No description.* |
+| <code><a href="#cdk-sqs-to-eventbridge.SqsToEventbridge.property.eventSource">eventSource</a></code> | <code>aws-cdk-lib.aws_lambda_event_sources.SqsEventSource</code> | *No description.* |
 | <code><a href="#cdk-sqs-to-eventbridge.SqsToEventbridge.property.eventSourceMappingId">eventSourceMappingId</a></code> | <code>string</code> | *No description.* |
 
 ---
@@ -132,6 +138,26 @@ public readonly node: Node;
 - *Type:* constructs.Node
 
 The tree node.
+
+---
+
+##### `eventBus`<sup>Required</sup> <a name="eventBus" id="cdk-sqs-to-eventbridge.SqsToEventbridge.property.eventBus"></a>
+
+```typescript
+public readonly eventBus: IEventBus;
+```
+
+- *Type:* aws-cdk-lib.aws_events.IEventBus
+
+---
+
+##### `eventSource`<sup>Required</sup> <a name="eventSource" id="cdk-sqs-to-eventbridge.SqsToEventbridge.property.eventSource"></a>
+
+```typescript
+public readonly eventSource: SqsEventSource;
+```
+
+- *Type:* aws-cdk-lib.aws_lambda_event_sources.SqsEventSource
 
 ---
 
@@ -162,21 +188,12 @@ const eventbridgeToSqsProps: EventbridgeToSqsProps = { ... }
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href="#cdk-sqs-to-eventbridge.EventbridgeToSqsProps.property.eventBus">eventBus</a></code> | <code>aws-cdk-lib.aws_events.EventBus</code> | *No description.* |
 | <code><a href="#cdk-sqs-to-eventbridge.EventbridgeToSqsProps.property.sqsQueue">sqsQueue</a></code> | <code>aws-cdk-lib.aws_sqs.Queue</code> | *No description.* |
+| <code><a href="#cdk-sqs-to-eventbridge.EventbridgeToSqsProps.property.eventBusProps">eventBusProps</a></code> | <code>aws-cdk-lib.aws_events.EventBusProps</code> | *No description.* |
+| <code><a href="#cdk-sqs-to-eventbridge.EventbridgeToSqsProps.property.existingEventBusInterface">existingEventBusInterface</a></code> | <code>aws-cdk-lib.aws_events.EventBus</code> | *No description.* |
 | <code><a href="#cdk-sqs-to-eventbridge.EventbridgeToSqsProps.property.functionOptions">functionOptions</a></code> | <code>aws-cdk-lib.aws_lambda.FunctionOptions</code> | *No description.* |
 | <code><a href="#cdk-sqs-to-eventbridge.EventbridgeToSqsProps.property.logRetention">logRetention</a></code> | <code>number</code> | *No description.* |
 | <code><a href="#cdk-sqs-to-eventbridge.EventbridgeToSqsProps.property.sqsEventSourceProps">sqsEventSourceProps</a></code> | <code>aws-cdk-lib.aws_lambda_event_sources.SqsEventSourceProps</code> | *No description.* |
-
----
-
-##### `eventBus`<sup>Required</sup> <a name="eventBus" id="cdk-sqs-to-eventbridge.EventbridgeToSqsProps.property.eventBus"></a>
-
-```typescript
-public readonly eventBus: EventBus;
-```
-
-- *Type:* aws-cdk-lib.aws_events.EventBus
 
 ---
 
@@ -187,6 +204,26 @@ public readonly sqsQueue: Queue;
 ```
 
 - *Type:* aws-cdk-lib.aws_sqs.Queue
+
+---
+
+##### `eventBusProps`<sup>Optional</sup> <a name="eventBusProps" id="cdk-sqs-to-eventbridge.EventbridgeToSqsProps.property.eventBusProps"></a>
+
+```typescript
+public readonly eventBusProps: EventBusProps;
+```
+
+- *Type:* aws-cdk-lib.aws_events.EventBusProps
+
+---
+
+##### `existingEventBusInterface`<sup>Optional</sup> <a name="existingEventBusInterface" id="cdk-sqs-to-eventbridge.EventbridgeToSqsProps.property.existingEventBusInterface"></a>
+
+```typescript
+public readonly existingEventBusInterface: EventBus;
+```
+
+- *Type:* aws-cdk-lib.aws_events.EventBus
 
 ---
 

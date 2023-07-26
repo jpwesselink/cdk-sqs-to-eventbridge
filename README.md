@@ -13,8 +13,11 @@ npm i cdk-sqs-to-eventbridge
 ```typescript
 import { SqsToEventbridge } from 'cdk-sqs-to-eventbridge'
 
+declare const eventBus: EventBus;
+declare const queue: Queue;
+
 new SqsToEventbridge(this, 'SqsToEventbridge', {
   eventBus: eventBus,
   queue: queue,
-})
+});
 ```
