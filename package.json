@@ -41,8 +41,8 @@
     "@types/node": "^16",
     "@typescript-eslint/eslint-plugin": "^5",
     "@typescript-eslint/parser": "^5",
-    "aws-cdk-lib": "^2.88.0",
-    "constructs": "^10.2.69",
+    "aws-cdk-lib": "2.88.0",
+    "constructs": "10.2.69",
     "esbuild": "^0.18.17",
     "eslint": "^8",
     "eslint-import-resolver-node": "^0.3.7",
@@ -62,15 +62,13 @@
     "typescript": "^5.1.6"
   },
   "peerDependencies": {
-    "aws-cdk-lib": "^2.1.0",
-    "constructs": "^10.0.5"
+    "aws-cdk-lib": "^2.88.0",
+    "constructs": "^10.2.69"
   },
   "dependencies": {
     "@aws-sdk/client-eventbridge": "^3.377.0",
     "@types/aws-lambda": "^8.10.119",
-    "aws-cdk-lib": "^2.88.0",
-    "change-case": "^4.1.2",
-    "constructs": "^10.2.69"
+    "change-case": "^4.1.2"
   },
   "bundledDependencies": [
     "@aws-sdk/client-eventbridge",

@@ -1,7 +1,5 @@
 import { EventBus } from 'aws-cdk-lib/aws-events';
-import { Runtime } from 'aws-cdk-lib/aws-lambda';
 import { SqsEventSource } from 'aws-cdk-lib/aws-lambda-event-sources';
-import { NodejsFunction } from 'aws-cdk-lib/aws-lambda-nodejs';
 import { Queue } from 'aws-cdk-lib/aws-sqs';
 import { paramCase } from 'change-case';
 import { Construct } from 'constructs';
