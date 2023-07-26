@@ -1,5 +1,5 @@
-import { Hello } from '../src';
+import { SqsToEventbridge } from '../src';
 
 test('hello', () => {
-  expect(new Hello().sayHello()).toBe('hello, world!');
+  expect(SqsToEventbridge).toBeTruthy();
 });
