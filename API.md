@@ -1,4 +1,6 @@
-# replace this
+# cdk-sqs-to-eventbridge
+
+This is a CDK construct library that allows you to easily put messages from an SQS queue to an EventBridge event bus
 # API Reference <a name="API Reference" id="api-reference"></a>
 
 ## Constructs <a name="Constructs" id="Constructs"></a>
